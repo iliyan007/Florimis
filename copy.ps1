@@ -1,0 +1,1 @@
+Copy-Item 'X:\OneDrive\Documents\ViberDownloads\0-02-05-3ea178ae55fa14bb35d754b94a2039221f7b071e9e31657570934fd52718e42e_50b4840a7b9fa17.jpg' -Destination 'X:\Iliyan''s folder\Projects\Florimis\Photos\'
