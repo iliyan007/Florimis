@@ -413,22 +413,8 @@ body {
 }
 
 #weather {
-    background: linear-gradient(135deg, #0c1929 0%, #1a3a5c 50%, #2d5a87 100%);
+    background: #1a3a5c;
     position: relative;
-    overflow: hidden;
-}
-
-#weather::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 200, 50, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(100, 150, 255, 0.08) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 #weather .section-title {
@@ -466,13 +452,13 @@ body {
 }
 
 .loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
     border-top-color: #ffc832;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 15px;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
 }
 
 @keyframes spin {
@@ -504,53 +490,34 @@ body {
 }
 
 .weather-card {
-    background: linear-gradient(165deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 24px 16px;
-    width: 140px;
-    min-width: 140px;
+    padding: 20px 14px;
+    width: 130px;
+    min-width: 130px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.weather-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 200, 50, 0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    will-change: transform;
 }
 
 .weather-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.weather-card:hover::before {
-    opacity: 1;
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .weather-card.today {
-    background: linear-gradient(165deg, rgba(255, 200, 50, 0.15) 0%, rgba(255, 140, 0, 0.08) 100%);
+    background: rgba(255, 200, 50, 0.12);
     border-color: rgba(255, 200, 50, 0.3);
 }
 
 .weather-card.today::after {
     content: 'ДНЕС';
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
     font-size: 0.6rem;
     font-weight: 700;
     color: #ffc832;
@@ -561,23 +528,16 @@ body {
 }
 
 .weather-date {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: capitalize;
 }
 
 .weather-icon-main {
-    font-size: 3rem;
-    margin: 8px 0 12px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    animation: floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    font-size: 2.5rem;
+    margin: 6px 0 10px;
 }
 
 .rain-info {
@@ -1062,27 +1022,28 @@ body {
     }
 
     .weather-card {
-        width: 80px;
-        min-width: 80px;
-        padding: 12px 6px;
-        border-radius: 14px;
+        width: 75px;
+        min-width: 75px;
+        padding: 10px 5px;
+        border-radius: 12px;
         scroll-snap-align: start;
     }
 
     .weather-card.today::after {
-        top: 6px;
-        right: 6px;
-        font-size: 0.5rem;
+        top: 5px;
+        right: 5px;
+        font-size: 0.45rem;
+        padding: 2px 5px;
     }
 
     .weather-icon-main {
-        font-size: 1.6rem;
-        margin: 4px 0 6px;
+        font-size: 1.4rem;
+        margin: 3px 0 5px;
     }
 
     .weather-date {
-        font-size: 0.6rem;
-        margin-bottom: 8px;
+        font-size: 0.55rem;
+        margin-bottom: 6px;
     }
 
     .rain-info {
