@@ -663,6 +663,7 @@ body {
     position: relative;
     border-radius: 12px;
     box-shadow: var(--shadow-medium);
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -670,6 +671,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .gallery-item::before {
@@ -732,8 +734,8 @@ body {
 
 .main-footer {
     background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
-    color: #999;
-    padding: 100px 0 40px;
+    color: #bbb;
+    padding: 120px 0 50px;
     position: relative;
 }
 
@@ -756,8 +758,8 @@ body {
 
 .footer-col h4 {
     color: var(--white);
-    margin-bottom: 30px;
-    font-size: 1.5rem;
+    margin-bottom: 35px;
+    font-size: 1.6rem;
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
@@ -768,13 +770,14 @@ body {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 40px;
-    height: 2px;
+    width: 50px;
+    height: 3px;
     background: var(--secondary-color);
 }
 
 .footer-col p {
-    line-height: 2;
+    line-height: 2.2;
+    font-size: 1.05rem;
     transition: color 0.3s ease;
 }
 
@@ -785,8 +788,62 @@ body {
 }
 
 .footer-bottom p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
     opacity: 0.7;
+    transition: opacity 0.3s ease;
+    line-height: 1;
+    background: none;
+    border: none;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
