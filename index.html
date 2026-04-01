@@ -18,13 +18,12 @@
     <header class="main-header">
         <div class="container header-content">
             <a href="#" class="logo">
-                <img src="florimis_logo.jpg" alt="ФЛОРИМИС ЕООД Лого" id="logo-img">
+                <img src="florimis_logo-removebg-preview.png" alt="ФЛОРИМИС ЕООД Лого" id="logo-img">
                 <span class="logo-text">ФЛОРИМИС ЕООД</span>
             </a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#about">За Нас</a></li>
-                    <li><a href="#news">Новини</a></li>
                     <li><a href="#rent">Рента</a></li>
                     <li><a href="#gallery">Галерия</a></li>
                     <li><a href="#contact">Контакти</a></li>
@@ -35,7 +34,7 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content">
+            <div class="hero-content" style="max-width: 100%; width: 100%; padding: 0 80px;">
                 <h1>Традиция и иновации в земеделието</h1>
                 <p>Ние се грижим за земята с отговорност, професионализъм и поглед към бъдещето.</p>
                 <a href="#contact" class="btn btn-primary">Свържете се с нас</a>
@@ -43,61 +42,39 @@
         </section>
 
         <section id="about" class="feature-section">
+            <div class="feature-image" style="background-image: url('Photos/DJI_0302.JPG');"></div>
             <div class="feature-content">
                 <h2>За Нас</h2>
                 <p>ФЛОРИМИС ЕООД е лидер в модерното земеделие. Нашата мисия е да обработваме земята с уважение,
                     използвайки най-новите технологии за постигане на високи добиви и устойчиво развитие.</p>
-                <p>С над 20 години опит, ние сме доказан партньор за собствениците на земя и бизнеса.</p>
+                <p>С над 10 години опит, ние сме доказан партньор за собствениците на земя и бизнеса.</p>
             </div>
-            <div class="feature-image" style="background-image: url('farmer_hands_soil.png');"></div>
-        </section>
-
-        <section id="news" class="feature-section">
-            <div class="feature-content">
-                <h2>Актуални Цени и Новини</h2>
-                <p>Следете пазара с нас. Ето актуалните изкупни цени за месец Ноември 2025:</p>
-                <table class="price-table">
-                    <tr>
-                        <td>🌾 Пшеница</td>
-                        <td><strong>420 лв/тон</strong></td>
-                    </tr>
-                    <tr>
-                        <td>🌻 Слънчоглед</td>
-                        <td><strong>850 лв/тон</strong></td>
-                    </tr>
-                    <tr>
-                        <td>🌽 Царевица</td>
-                        <td><strong>380 лв/тон</strong></td>
-                    </tr>
-                </table>
-                <br>
-                <h3>Последно от полето</h3>
-                <p><strong>20.11.2025:</strong> Успешно приключихме засяването на есенните култури. Благоприятните
-                    климатични условия обещават добра реколта.</p>
-            </div>
-            <div class="feature-image" style="background-image: url('combine_harvester.png');"></div>
         </section>
 
         <section id="rent" class="rent-section">
             <div class="rent-content">
                 <h2>Изплащане на Ренти</h2>
                 <div class="rent-details">
-                    <p>Кампания <strong>2024/2025</strong></p>
-                    <p>Начало на изплащане: <strong>1-ви Октомври 2025</strong></p>
-                    <p>Краен срок за изплащане: <strong>30.11.2025</strong></p>
+                    <p>Година <strong>2025/2026</strong></p>
+                    <p>Начало на изплащане: <strong>—</strong></p>
+                    <p>Краен срок за изплащане: <strong>—</strong></p>
                     <br>
                     <p>Моля, заповядайте в нашия офис с лична карта и актуален IBAN.</p>
-                    <p>Работно време: Понеделник - Петък, 09:00 - 16:00</p>
+                    <p>Работно време: Понеделник - Петък, 09:00 - 17:00</p>
                 </div>
             </div>
         </section>
 
-        <section id="weather" class="section-padding bg-light">
+        <section id="weather" class="section-padding">
             <div class="container">
-                <h2 class="section-title">Прогноза за времето - Бобов дол</h2>
-                <p id="weather-updated" style="text-align: center; color: #888; font-size: 0.85rem; margin-bottom: 20px;"></p>
+                <h2 class="section-title">Прогноза за времето</h2>
+                <p class="weather-location">📍 Бобов дол, България</p>
+                <p id="weather-updated" class="weather-timestamp"></p>
                 <div id="weather-container" class="weather-grid">
-                    <p style="text-align: center; width: 100%;">Зареждане на прогнозата...</p>
+                    <div class="weather-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Зареждане на прогнозата...</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -106,10 +83,11 @@
             <div class="container">
                 <h2 class="section-title">Галерия</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="wheat_field.png" alt="Пшенично поле"></div>
-                    <div class="gallery-item"><img src="tractor_plowing.png" alt="Трактор"></div>
-                    <div class="gallery-item"><img src="combine_harvester.png" alt="Комбайн"></div>
-                    <div class="gallery-item"><img src="farmer_hands_soil.png" alt="Грижа за земята"></div>
+                    <div class="gallery-item"><img src="Photos/DJI_0157 - Copy - Copy.JPG" alt="Поле от високо"></div>
+                    <div class="gallery-item"><img src="Photos/DJI_0291.JPG" alt="Дрон гледка"></div>
+                    <div class="gallery-item"><img src="Photos/DJI_0302.JPG" alt="Земеделска техника"></div>
+                    <div class="gallery-item"><img src="Photos/DJI_0811.JPG" alt="Реколта"></div>
+                    <div class="gallery-item"><img src="Photos/drone_field.png" alt="Дрон поле"></div>
                 </div>
             </div>
         </section>
@@ -118,9 +96,12 @@
             <div class="container">
                 <h2 class="section-title">Почивни Дни</h2>
                 <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>24, 25, 26 Декември 2025</strong> - Коледа</p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>1 Януари 2026</strong> - Нова Година</p>
-                    <p style="font-size: 1.1rem;"><strong>3 Март 2026</strong> - Национален празник</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>1 Януари</strong> - Нова Година</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>3 Март</strong> - Национален празник</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>18, 19, 21 Април</strong> - Великден</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>6 Септември</strong> - Ден на Съединението</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>22 Септември</strong> - Ден на Независимостта</p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;"><strong>24, 25 Декември</strong> - Коледа</p>
                 </div>
             </div>
         </section>
@@ -131,17 +112,17 @@
             <div class="footer-col">
                 <h4>ФЛОРИМИС ЕООД</h4>
                 <p>Вашият доверен партньор в земеделието.</p>
-                <p style="margin-top: 15px;">🌿 Над 20 години опит</p>
+                <p style="margin-top: 15px;">🌿 Над 10 години опит</p>
             </div>
             <div class="footer-col">
                 <h4>Контакти</h4>
-                <p>📍 Адрес: ул. Примерна 12, гр. Добрич</p>
+                <p>📍 Адрес: ул. Васил Коларов 6, гр. Бобов дол</p>
                 <p>📞 Телефон: 0888 123 456</p>
-                <p>✉️ Email: office@florimis.bg</p>
+                <p>✉️ Email: florimys@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ФЛОРИМИС ЕООД. Всички права запазени.</p>
+            <p>&copy; ФЛОРИМИС ЕООД. Всички права запазени.</p>
         </div>
     </footer>
 

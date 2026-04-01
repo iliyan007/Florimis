@@ -122,6 +122,7 @@ async function fetchWeather() {
 
             const card = document.createElement('div');
             card.className = 'weather-card';
+            if (i === 0) card.classList.add('today');
 
             let rainHtml = '';
             if (rainProb > 0) {
@@ -134,7 +135,7 @@ async function fetchWeather() {
                 `;
             } else {
                 rainHtml = `
-                    <div class="rain-info" style="opacity: 0.5;">
+                    <div class="rain-info rain-low">
                         <span class="rain-icon">💧</span>
                         <span class="rain-text">0%</span>
                     </div>
@@ -145,6 +146,7 @@ async function fetchWeather() {
                 <div class="weather-date">${dayName}</div>
                 <div class="weather-icon-main">${icon}</div>
                 ${rainHtml}
+                <div class="weather-divider"></div>
                 <div class="weather-temps">
                     <div class="temp-box">
                         <span class="temp-icon-small">☀️</span>
