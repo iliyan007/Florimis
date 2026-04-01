@@ -54,7 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fetchWeather();
+    setInterval(fetchWeather, 10 * 60 * 1000);
 });
+
+function updateTimestamp() {
+    const el = document.getElementById('weather-updated');
+    if (el) {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('bg-BG', { hour: '2-digit', minute: '2-digit' });
+        el.textContent = `Последно обновяване: ${timeStr}`;
+    }
+}
 
 async function fetchWeather() {
     const container = document.getElementById('weather-container');
@@ -148,6 +158,8 @@ async function fetchWeather() {
             `;
             container.appendChild(card);
         }
+
+        updateTimestamp();
 
     } catch (error) {
         console.error('Weather fetch error:', error);
