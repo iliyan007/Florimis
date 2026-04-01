@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Florimis website loaded');
 
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navList.classList.remove('active');
+            });
+        });
+    }
+
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
 
@@ -19,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const headerOffset = 90;
+                const headerOffset = window.innerWidth <= 900 ? 70 : 90;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
