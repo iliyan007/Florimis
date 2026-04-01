@@ -1056,41 +1056,56 @@ body {
     .weather-grid {
         gap: 8px;
         padding: 10px 12px 30px;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 
     .weather-card {
-        width: 100px;
-        min-width: 100px;
-        padding: 14px 8px;
-        border-radius: 16px;
+        width: 80px;
+        min-width: 80px;
+        padding: 12px 6px;
+        border-radius: 14px;
+        scroll-snap-align: start;
+    }
+
+    .weather-card.today::after {
+        top: 6px;
+        right: 6px;
+        font-size: 0.5rem;
     }
 
     .weather-icon-main {
-        font-size: 2rem;
-        margin: 4px 0 8px;
+        font-size: 1.6rem;
+        margin: 4px 0 6px;
     }
 
     .weather-date {
-        font-size: 0.7rem;
-        margin-bottom: 10px;
+        font-size: 0.6rem;
+        margin-bottom: 8px;
     }
 
     .rain-info {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-        margin: 8px 0;
+        font-size: 0.6rem;
+        padding: 3px 6px;
+        margin: 6px 0;
     }
 
     .weather-divider {
-        margin: 10px auto;
+        margin: 8px auto;
+        width: 30px;
     }
 
     .weather-temps {
-        gap: 12px;
+        gap: 8px;
     }
 
     .temp-value {
-        font-size: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .temp-icon-small {
+        font-size: 0.6rem;
     }
 
     .weather-location {
